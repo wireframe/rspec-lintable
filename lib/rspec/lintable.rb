@@ -24,8 +24,6 @@ RSpec::Matchers.define :be_lintable do |ability|
     "expected response javascript to be lintable.\nErrors: #{@errors.inspect}\nContent: #{@content}"
   end
 
-  private
-
   def jshint_options
     @jshint_options ||= JSON.load(File.read(Rails.root.join('.jshintrc')))
   end
