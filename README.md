@@ -1,29 +1,31 @@
 # Rspec::Lintable
-
-TODO: Write a gem description
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'rspec-lintable'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install rspec-lintable
+> Ensure your controllers are returning "valid" Javascript responses
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+describe "#show" do
+  before { get :show, format: :js }
+  it { should be_lintable }
+end
+```
+
+## Installation
+
+Add the gem to your `test` group of your `Gemfile` and it will automatically be loaded into your RSpec runtime!
+
+```ruby
+# Gemfile
+gem 'rspec-lintable', group: :test
+```
+
+## Configuration
+
+All options and configuration are done via the standard [Jshint .jshintrc](http://www.jshint.com/docs/)
+configuration file.
 
 ## Contributing
 
-1. Fork it ( http://github.com/<my-github-username>/rspec-lintable/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+Interested in contributing?  Review the project [contribution guidelines](CONTRIBUTING.md) and get started!
+
+Patches are always welcome and thank you to all [project contributors](https://github.com/wireframe/rspec-lintable/graphs/contributors)!

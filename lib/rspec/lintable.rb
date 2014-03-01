@@ -1,4 +1,5 @@
 require "rspec/lintable/version"
+require 'rspec/matchers'
 require 'jshintrb'
 require 'json'
 
